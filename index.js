@@ -46,87 +46,131 @@
 // const car3 = new Car('Tesla', 'black', 2021, 0, 400, 0, 0);
 // const car4 = new Car(1, 2, 2021, 0, 400, 0, 0);
 
-class User {
+// class User {
+//   constructor(name, surname, age) {
+//     this.name = name;
+//     this.surname = surname;
+//     this.age = age;
+//   }
+
+//   getFullName = () => `${this.name} + ${this.surname}`;
+
+//   isAdult = () => this.age >= 18;
+// }
+
+// const user1 = new User("Vlad", "Gamma", 19);
+// const user2 = new User("Vlad", "Gamma", 10);
+// const user3 = new User(50, null, "10");
+
+// class Moder {
+//   constructor(name, surname, age, email) {
+//     this.name = name;
+//     this.surname = surname;
+//     this.age = age;
+//     this.email = email;
+//   }
+//   createMessage = () => "Create Message!";
+//   deleteMessage = () => "DELETE Message!";
+
+//   // Name
+//   set name(newName) {
+//     if (typeof newName !== "string") {
+//       throw new TypeError("Invalid data, name - string!");
+//     }
+//     this._name = newName;
+//   }
+
+//   get name() {
+//     return this.name;
+//   }
+
+//   // Surname
+//   set surname(newSurname) {
+//     if (typeof newSurname !== "string") {
+//       throw new TypeError("Invalid data, name - string!");
+//     }
+//     this._surname = newSurname;
+//   }
+
+//   get surname() {
+//     return this.surname;
+//   }
+
+//   // email
+
+//   set email(newEmail) {
+//     if (typeof newEmail !== "string") {
+//       throw new TypeError("Invalid data, surname - string!");
+//     }
+//     this._email = newEmail;
+//   }
+
+//   get email() {
+//     return this.email;
+//   }
+
+//   set age(newAge) {
+//     if (typeof age !== "number") {
+//       throw new TypeError("Invalid data, age - number!");
+//     }
+
+//     this._age = age;
+//   }
+
+//   get age() {
+//     return this.age;
+//   }
+// }
+
+// const moder1 = new Moder("Vlad", "Gamma", 19, 'mail1');
+// const moder2 = new Moder("Ivan", "Alexsandrovich", 10, 'jsdfsdk');
+
+
+// ==========================16.02.2022=============================
+class Animal {
+  constructor(type, nickname) {
+    this.type = type;
+    this.nickname = nickname;
+  }
+ 
+  speeckAnimal() {
+    return 'SPEACK';
+  }
+}
+
+class Lion extends Animal {
+  constructor(nickname) {
+    super("Lion", nickname);
+  }
+  speeckAnimal() {
+    return "Rrrrr";
+  }
+}
+
+class Snake extends Animal {
+  constructor(nickname) {
+    super("Snake", nickname);
+  }
+  speeckAnimal() {
+    return "Shshs";
+  }
+}
+
+class Trainer {
   constructor(name, surname, age) {
     this.name = name;
     this.surname = surname;
     this.age = age;
   }
 
-  getFullName = () => `${this.name} + ${this.surname}`;
-
-  isAdult = () => this.age >= 18;
+  trainerAnimals(animal) {
+    return animal.speeckAnimal();
+  }
 }
 
-// const user1 = new User("Vlad", "Gamma", 19);
-// const user2 = new User("Vlad", "Gamma", 10);
-// const user3 = new User(50, null, "10");
+const animal = new Animal('animal', 'Pyshok')
+const snake_1 = new Snake("Zmei");
+const lion_1 = new Lion("Vasyka");
 
-
-class Moder{
-  constructor(name, surname, age, email) {
-    this.name = name;
-    this.surname = surname;
-    this.age = age;
-    this.email = email;
-  }
-  createMessage = () => "Create Message!";
-  deleteMessage = () => "DELETE Message!";
-
-
-  // Name
-  set name(newName){
-    if(typeof newName!=='string'){
-      throw new TypeError('Invalid data, name - string!')
-    }
-    this._name = newName;
-  }
-  
-  get name(){
-    return this.name;
-  }
-
-  // Surname
-  set surname(newSurname){
-    if(typeof newSurname!=='string'){
-      throw new TypeError('Invalid data, name - string!')
-    }
-    this._surname = newSurname;
-  }
-  
-  get surname(){
-    return this.surname;
-  }
-
-  // email
-
-  set email(newEmail){
-    if(typeof newEmail!=='string'){
-      throw new TypeError('Invalid data, surname - string!')
-    }
-    this._email = newEmail;
-  }
-  
-  get email(){
-    return this.email;
-  }
-
-
-
-  // set age(newAge){
-  //   if(typeof age !=='number'){
-  //     throw new TypeError('Invalid data, age - number!')
-  //   }
-    
-  //   this._age = age;
-  // }
-
-  // get age(){
-  //   return this.age;
-  // }
-  
-}
-
-
-const moder1 = new Moder("Vlad", "Gamma", 19, 'mail1');
-const moder2 = new Moder("Ivan", "Alexsandrovich", 10, 'jsdfsdk');
+const trainer = new Trainer("Taras", "Shevchenco", 30);
+// ===============================================================
